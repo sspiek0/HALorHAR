@@ -1,5 +1,6 @@
 from tkinter import*
 from tkinter import ttk
+import random
 
 root = Tk()
 root.geometry('1500x900')
@@ -8,51 +9,75 @@ root.config(bg='white')
 #переменные
 
 Question_Counter = 0
-Meter_Counter = 50
+Meter_Counter = 75
 
 #Функции
 
 def Button_Halal():
     global Question_Counter
     global Meter_Counter
-    
-    if Question_Counter==1:
-        Pig.destroy()
-    
-    Meter_Counter+=50
-    Question_Counter+=1
-    root.config(bg=Colors[Question_Counter])
-    Potuzno_Meter_Title['text']='РIВЕНЬ ПОТУЖНIСТÏ', Emojis[Question_Counter]
-    Test_Title['text']=f'Вопрос {Question_Counter+1}/11'
+    if Question_Counter<10:         
 
-    Potuzno_Meter_Image2 = PhotoImage(file='m_Potuznost_Meter.png', height=Meter_Counter)
-    Potuzno_Meter.config(image='Potuzno_Meter_Image2')
+        if Question_Counter==1:
+            Pig.destroy()
+    
+        Meter_Counter+=50
+        Question_Counter+=1
+        root.config(bg=Colors[Question_Counter])
+        Potuzno_Meter_Title['text']=f'РIВЕНЬ ПОТУЖНIСТÏ {Emojis[Question_Counter]}'
+        Test_Title['text']=f'Вопрос {Question_Counter+1}/11'
+
+        Potuzno_Meter_Image['file']='img/m_Potuznost_Meter.png'
+        Potuzno_Meter_Image['height']=Meter_Counter
+        Potuzno_Meter['image']=Potuzno_Meter_Image
+    else:
+        Message = ttk.Label(text='d0N\'† †®¥ †0 r6N', font=('Courier New',
+                                                random.randint(30,70)), foreground='red')
+        Message.place(x=random.randint(0,1300), y=random.randint(0,900))
 
     
 def Button_Haram():
     global Question_Counter
-    Question_Counter+=1
-    root.config(bg=Colors[Question_Counter])
-    Potuzno_Meter_Title['text']='РIВЕНЬ ПОТУЖНIСТÏ', Emojis[Question_Counter]
+    global Meter_Counter
+    if Question_Counter<10:         
+
+        if Question_Counter==1:
+            Pig.destroy()
+    
+        Meter_Counter+=50
+        Question_Counter+=1
+        root.config(bg=Colors[Question_Counter])
+        Potuzno_Meter_Title['text']=f'РIВЕНЬ ПОТУЖНIСТÏ {Emojis[Question_Counter]}'
+        Test_Title['text']=f'Вопрос {Question_Counter+1}/11'
+
+        Potuzno_Meter_Image['file']='img/m_Potuznost_Meter.png'
+        Potuzno_Meter_Image['height']=Meter_Counter
+        Potuzno_Meter['image']=Potuzno_Meter_Image
+    else:
+        Message = ttk.Label(text='d0N\'† †®¥ †0 r6N', font=('Courier New',
+                                                random.randint(30,70)), foreground='red')
+        Message.place(x=random.randint(0,1300), y=random.randint(0,900))
+
     
 
 #Списки
 
 Emojis = ['😊', '😄', '😃','🙂', '😐', '😑', '😒', '😠', '🤬', '👿', '💀']
-Questions = []
+Questions = {}
+Question_Images = []
 Colors = ['#FFFFFF', '#E6E6E6', '#CCCCCC', '#B3B3B3', '#999999', '#808080',
           '#666666', '#4D4D4D', '#333333', '#000000', '#000000']
 
 #картинки
 
-Koran_Gif_Image = PhotoImage(file='KORAN-GIF.gif')
-Potuzno_Meter_Image = PhotoImage(file='m_Potuznost_Meter.png', height=50)
-Main_Test_Image = PhotoImage(file='Main-Test.png', width=1000, height=650)
-Pig_Image = PhotoImage(file='Pig_Image.png')
+Koran_Gif_Image = PhotoImage(file='img/KORAN-GIF.gif')
+Potuzno_Meter_Image = PhotoImage(file='img/m_Potuznost_Meter.png', height=50)
+Main_Test_Image = PhotoImage(file='img/Main-Test.png', width=1000, height=650)
+Pig_Image = PhotoImage(file='img/Pig_Image.png')
 
 #объекты
 
-Koran_Gif = ttk.Label(image=Koran_Gif_Image).place(x=200,y=20)
+Koran_Gif = ttk.Label(image=Koran_Gif_Image, border=0).place(x=200,y=20)
 
 Pig = ttk.Label(image=Pig_Image, border=0)
 Pig.place(x=1050, y=640)
