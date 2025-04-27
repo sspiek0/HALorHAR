@@ -24,4 +24,22 @@ HALorHAR
 每5秒钟，一个孩子就会因为你而死亡，而你甚至不知道它。
 Sizce Rum ve Ermeni soykırımı boşuna mı yapıldı?
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ответы есть на вики
