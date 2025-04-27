@@ -32,7 +32,7 @@ def Button_Halal():
         Potuzno_Meter['image']=Potuzno_Meter_Image
     else:
         Message = ttk.Label(text='d0N\'† †®¥ †0 r6N', font=('Courier New',
-                                                random.randint(30,70)), foreground='red')
+            random.randint(30,70)), foreground='red', background='black')
         Message.place(x=random.randint(0,1300), y=random.randint(0,900))
 
     
@@ -53,6 +53,7 @@ def Button_Haram():
         Potuzno_Meter_Image['file']='img/m_Potuznost_Meter.png'
         Potuzno_Meter_Image['height']=Meter_Counter
         Potuzno_Meter['image']=Potuzno_Meter_Image
+        Potuzno_Meter['background']=Colors[Question_Counter]
     else:
         Message = ttk.Label(text='d0N\'† †®¥ †0 r6N', font=('Courier New',
                                                 random.randint(30,70)), foreground='red')
@@ -89,23 +90,26 @@ Potuzno_Meter = ttk.Label(image=Potuzno_Meter_Image,
 Potuzno_Meter.place(x=1170, y=240)
 
 Button_Haram = Button(text='Харам', width=25,
-                      height=4, command=Button_Haram).place(x=200, y=750)
+                      height=4, command=Button_Haram,
+                      font=('Courier New', 24))
+Button_Haram.place(x=100, y=750)
 
 Button_Halal = Button(text='Халяль', width=25,
-                      height=4, command=Button_Halal).place(x=700, y=750)
+    height=4, command=Button_Halal, font=('Courier New', 24))
+Button_Halal.place(x=650, y=750)
 
 #тайтлы
 
 root.title('HARorHAL')
 root.resizable(False, False)
 Title = ttk.Label(text='Харам или Халяль?', font=('Impact', 58),
-                  foreground='white')
+                  foreground='white', background='#000000', padding=8)
 Title.place(x=500, y=30)
 Test_Title = ttk.Label(text='Вопрос 1/11', font=('Times', 36,
-                 'italic'), foreground='red')
+                 'italic'), foreground='red', background='#000000')
 Test_Title.place(x=490, y=200)
 Potuzno_Meter_Title = ttk.Label(text='РIВЕНЬ ПОТУЖНIСТÏ ☺️', font=('Times',
-                                    24, 'italic'), foreground='red')
+                                    24, 'italic'), foreground='red', background='#000000')
 Potuzno_Meter_Title.place(x=1100, y=200)
 
 
