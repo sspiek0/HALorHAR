@@ -5,6 +5,7 @@ import random
 root = Tk()
 root.geometry('1500x900')
 root.config(bg='white')
+root.iconphoto(False, PhotoImage(file='img/logo.png'))
 
 #переменные
 
@@ -51,12 +52,12 @@ def Button_Haram():
         Test_Title['text']=f'Вопрос {Question_Counter+1}/11'
 
         Potuzno_Meter_Image['file']='img/m_Potuznost_Meter.png'
-        Potuzno_Meter_Image['height']=Meter_Counter
+        Potuzno_Meter_Image.config(height=Meter_Counter)
         Potuzno_Meter['image']=Potuzno_Meter_Image
         Potuzno_Meter['background']=Colors[Question_Counter]
     else:
         Message = ttk.Label(text='d0N\'† †®¥ †0 r6N', font=('Courier New',
-                                                random.randint(30,70)), foreground='red')
+            random.randint(30,70)), foreground='red', background='#000000')
         Message.place(x=random.randint(0,1300), y=random.randint(0,900))
 
     
@@ -90,13 +91,13 @@ Potuzno_Meter = ttk.Label(image=Potuzno_Meter_Image,
 Potuzno_Meter.place(x=1170, y=240)
 
 Button_Haram = Button(text='Харам', width=25,
-                      height=4, command=Button_Haram,
-                      font=('Courier New', 24))
+    height=2, command=Button_Haram, font=('Courier New', 24))
+
 Button_Haram.place(x=100, y=750)
 
 Button_Halal = Button(text='Халяль', width=25,
-    height=4, command=Button_Halal, font=('Courier New', 24))
-Button_Halal.place(x=650, y=750)
+    height=2, command=Button_Halal, font=('Courier New', 24))
+Button_Halal.place(x=625, y=750)
 
 #тайтлы
 
@@ -109,7 +110,7 @@ Test_Title = ttk.Label(text='Вопрос 1/11', font=('Times', 36,
                  'italic'), foreground='red', background='#000000')
 Test_Title.place(x=490, y=200)
 Potuzno_Meter_Title = ttk.Label(text='РIВЕНЬ ПОТУЖНIСТÏ ☺️', font=('Times',
-                                    24, 'italic'), foreground='red', background='#000000')
+        24, 'italic'), padding=2,foreground='red', background='#000000')
 Potuzno_Meter_Title.place(x=1100, y=200)
 
 
