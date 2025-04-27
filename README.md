@@ -10,11 +10,11 @@ HALorHAR
 
 Данная програма не содежит вирусов. Вот наш сертификат. Вы же верите DrWeb?
 
-![DrWeb sertificate!](/img/halal.jpg "DrWeb sertificate")
+![DrWeb sertificate!](/img/drweb_sertificat.jpg "DrWeb sertificate")
 
 
 Это на 100%
-![halal!](/img/drweb_sertificat.jpg "halal")
+![halal!](/img/halal.jpg "halal")
 
 ### -- Team Resistors
 
