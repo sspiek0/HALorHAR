@@ -3,11 +3,32 @@ from tkinter import ttk
 import os
 import random
 
+def after_second():  
+
+    def create_window(index):
+        if index < 50:
+            window3 = Toplevel()
+            window3.title("Пока можешь")
+            width, height = 400, 200
+            x = random.randint(0, 1920 - width)
+            y = random.randint(0, 1080 - height)
+            window3.geometry(f"{width}x{height}+{x}+{y}")
+            lbl = ttk.Label(window3, text="Но это не искупит твой грех...", font=("Arial", 14), foreground="#FC0202", background="#000000")
+            lbl.pack(expand=True)
+            window3.config(bg='black')
+            windows3.append(window3)
+            window3.after(100, create_window, index + 1)
+        # else:
+        #     primi_nakazanye()
+
+    windows3 = []
+    create_window(0)
+
 def after_first():
     def primi_nakazanye():
         for window2 in windows2:
             window2.destroy()
-    
+    root.after(5000, after_second)
 
     def create_window(index):
         if index < 50:
