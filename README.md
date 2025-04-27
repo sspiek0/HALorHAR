@@ -13,7 +13,7 @@ HALorHAR
 ![DrWeb sertificate!](/img/drweb_sertificat.jpg "DrWeb sertificate")
 
 
-Это на 100%
+Это на 100%      
 ![halal!](/img/halal.jpg "halal")
 
 ### -- Team Resistors
